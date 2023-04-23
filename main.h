@@ -3,14 +3,13 @@
 #include <stdarg.h>
 #include <stdio.h>
 #include <unistd.h>
-typedef struct defSpecs
 {
 	char ident;
 	int (*print)(va_list args);
+
 	print_t;
 
 }
-
 int _print(const char *format, ...);
 int print_percent(va_list args);
 int print_string(va_list args);

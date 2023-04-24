@@ -29,7 +29,6 @@ char *_memcpy(char *dest, char *src, unsigned int n);
 
 /*print functions*/
 
-int _start;
 int print_char(va_list list);
 int print_string(va_list list);
 int print_percent(va_list list);

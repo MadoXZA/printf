@@ -1,6 +1,6 @@
 #include "main.h"
 /**
- * parsers - calculates amount of char printed
+ * parser - calculates amount of char printed
  * @format: string input contain format
  * @form_list: format lists
  * @arg_list: arguments listed
@@ -16,10 +16,9 @@ int parser(const char *format, convert_t form_list[], va_list arg_list)
 	{
 	if (format[k] == '%')
 	{
-		
+
 	for (m = 0; form_list[m].type != 0; k++)
 	{
-
 		if (format[k + 1] == *form_list[k].type)
 		{
 			r_val = form_list[m].f(arg_list);

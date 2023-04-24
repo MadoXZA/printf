@@ -1,4 +1,5 @@
 #include "main.h"
+#include <unistd.h>
 /**
  * _putchar - input to standard output written
  * @c: print char

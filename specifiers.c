@@ -52,27 +52,35 @@ int print_percent(__attribute__((unused))va_list list)
  */
 int print_integer(va_list list)
 {
-	int n, j = 1, len = 0;
-	unsigned int num;
+	int num = va_arg(list, int);
+	int m = 1, len = 0;
 
-	n = va_arg(list, int);
-	if (n < 0)
+	if (num < 0)
 	{
-	len += _putchar('-');
-	num = n * -1;
+		 _putchar('-');
+		len++;
+		if (num == -2147483648)
+		{
+			num++;
+			num *= -1;
+			_putchar('2');
+			len++;
+		}
+		num *= -1;
 	}
-	else
-		num = n;
-	while (num / j > 9)
-		j *= 10;
-	while (j != 0)
+	for (m = 1; num / m  > 9; m *= 10)
 	{
-		len += _putchar('0' + num / j);
-		num %= j;
-		j /= 10;
 	}
+	for (; m >= 1; m /= 10)
+	{
+		_putchar((num / m) + '0');
+		num %= m;
+		len++;
+	}
+
 	return (len);
 }
+
 /**
  * print_unsigned - unsigned numbers printed
  * @list: arguments listed
@@ -93,10 +101,5 @@ int print_unsigned(va_list list)
 		num %= j;
 		j /= 10;
 	}
-	num = va_arg(list, unsigned int);
-	if (n == 0)
-	return (len);
-	if (n < 1)
-	return (-1);
 	return (len);
 }

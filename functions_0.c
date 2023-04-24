@@ -65,5 +65,5 @@ void write_base(char *str)
 	int k;
 
 	for (k = 0; str[k] != '\0'; k++)
-		putchar(str[k]);
+		_putchar(str[k]);
 }

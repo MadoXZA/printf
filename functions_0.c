@@ -37,6 +37,7 @@ int print_string(va_list args)
 	}
 	return (count);
 }
+
 /**
  *print_percent - percent to be printed
  *@args: arguments listed
@@ -53,6 +54,7 @@ int print_percent(va_list args)
 	}
 	return (_putchar(*str));
 	}
+
 /**
  * print_d - prints the integer
  *@args: arguments listed
@@ -74,11 +76,12 @@ int print_d(va_list args)
 	black = n;
 	white = black;
 	countnum = 1;
+
 	while (white > 9)
-	{
-		white /= 10;
-		countnum *= 10;
-	}
+
+	white /= 10;
+	countnum *= 10;
+
 	while (countnum >= 1)
 	{
 		count += _putchar(((black / countnum) % 10) + '0');
@@ -86,11 +89,13 @@ int print_d(va_list args)
 	}
 	return (count);
 }
+
 /**
- * print_i - integer printed
- * @args: arguments listed
- * Return: function of decimal
+ * print_i - prints integer
+ * @args: interger argument
+ * Return: the decimal function
  */
+
 int print_i(va_list args)
 {
 	return (print_d(args));

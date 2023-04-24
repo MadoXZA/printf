@@ -1,106 +1,69 @@
-<<<<<<< HEAD
 #include "main.h"
-
 /**
- * print_char - char printed
- * @args: arguments listed
- * Return: number of character printed
+ * rev_string - string reverse
+ * @src: print string
+ * Return: reversed string to pointer
  */
-int print_char(va_list args)
+char *rev_string(char *src)
 {
-	int drone;
+	int len, f;
+	char temp, *res;
 
-	drone = va_arg(args, int);
-	return (_putchar(drone));
+	for (len = 0; src[len] != '\0'; len++)
+	{
+	}
+	res = malloc(sizeof(char) * len + 1);
+	if (res == NULL)
+	return (NULL);
+	_memcpy(res, src, len);
+	for (f = 0; f < len; f++, len--)
+	{
+		temp = res[len - 1];
+		res[len - 1] = res[f];
+		res[f] = temp;
+	}
+	return (res);
 }
-
 /**
- *print_string - string printed
- *@args: arguments listed
- * Return: print number of chars
+ * _memcpy - memory area copy
+ * @dest: copy dest
+ * @src: copy source
+ * @n: copy bytes of number
+ * Return: returns pointer to dest
  */
-int print_string(va_list args)
+char *_memcpy(char *dest, char *src, unsigned int n)
 {
-	int k, count;
-	char *str;
+	unsigned int k;
 
-	count = 0;
-	str = va_arg(args, char *);
-
-	if (str == NULL)
-	str = "(null)";
-	count = 0;
-	while (str[k] != '\0')
-	{
-	_putchar(str[k])
-	k++;
-	count++;
-	}
-	return (count);
+	for (k = 0; k < n; k++)
+		dest[k] = src[k];
+	dest[k] = '\0'
+	return (dest);
 }
-
 /**
- *print_percent - percent to be printed
- *@args: arguments listed
- *Return: prints number of characters
+ * base_len - octal number calculated
+ * @num: length calculated for number
+ * @base: calculate by base
+ * Return: length of number of integer
  */
-int print_percent(va_list args)
+unsigned int base_len(unsigned int num, int base)
 {
-	char *str;
+	unsigned int k;
 
-	str = "%";
-	if (va_arg(args, int) == *str)
+	for (k = 0; num > 0; k++)
 	{
-	return (*str);
+		num = num / base;
 	}
-	return (_putchar(*str));
-	}
-
-/**
- * print_d - prints the integer
- *@args: arguments listed
- * Return: prints number of chars
- */
-int print_d(va_list args)
-
-	unsigned int black, white, countnum, count;
-	int n;
-
-	count = 0;
-	n = va_arg(args, int);
-
-	if (n < 0)
-	{
-		black = (n * -1);
-		count += _putchar('-');
-	}
-	else
-	black = n;
-	white = black;
-	countnum = 1;
-
-	while (white > 9)
-
-	white /= 10;
-	countnum *= 10;
-
-	while (countnum >= 1)
-	{
-		count += _putchar(((black / countnum) % 10) + '0');
-		countnum /= 10;
-	}
-	return (count);
+	return (k);
 }
-
 /**
- * print_i - prints integer
- * @args: interger argument
- * Return: the decimal function
+ * write_base - written output sent
+ * @str: string to parse
  */
-
-int print_i(va_list args)
+void write_base(char *str)
 {
-	return (print_d(args));
+	int k;
+
+	for (k = 0; str[k] != '\0'; k++)
+		_putchar(str[k];
 }
-=======
->>>>>>> f5afe07b78ca91f190a33cbd805cf59b6b08e10e

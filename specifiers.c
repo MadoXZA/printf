@@ -35,11 +35,11 @@ int print_string(va_list list)
 	return (k);
 	}
 /**
- * print_precentage - symbol percent printed
+ * print_percent - Print percent
  * @list: arguments listed
  * Return: amount of chracters printed
  */
-int print_percentage(__attribute__((unused))va_list list)
+int print_percent(__atrribute__((unused))va_list list)
 {
 	_putchar('%');
 	return (1);

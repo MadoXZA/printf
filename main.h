@@ -32,8 +32,7 @@ char *_memcpy(char *dest, char *src, unsigned int n);
 
 int print_char(va_list list);
 int print_string(va_list list);
-int print_percentage(va_list list);
-int print_percent(__attribute__((unused))(va_list list));
+int print_percent(va_list list);
 int print_interger(va_list list);
 int print_binary(va_list list);
 int print_unsigned(va_list list);

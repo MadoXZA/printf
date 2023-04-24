@@ -31,7 +31,7 @@ int print_string(va_list args)
 	count = 0;
 	while (str[k] != '\0')
 	{
-	_putchar(tr[k];
+	_putchar(str[k])
 	k++;
 	count++;
 	}

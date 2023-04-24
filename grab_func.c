@@ -10,7 +10,7 @@
  * Return: chars to be printed
  */
 
-int grab_func(char c, va_lisr args)
+int grab_func(char c, va_list args)
 {
 	int k;
 

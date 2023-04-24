@@ -11,11 +11,12 @@
  * @f: associated function
  */
 
-typedef struct convert
+struct convert
 {
-	char *type;
+	char *sim;
 	int (*f)(va_list);
-} convert_t;
+};
+typedef struct convert convert_t;
 
 /* printf handle function types*/
 

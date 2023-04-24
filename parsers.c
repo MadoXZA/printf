@@ -17,9 +17,9 @@ int parser(const char *format, convert_t form_list[], va_list arg_list)
 	if (format[k] == '%')
 	{
 
-	for (m = 0; form_list[m].type != 0; k++)
+	for (m = 0; form_list[m].sim != 0; k++)
 	{
-		if (format[k + 1] == *form_list[k].type)
+		if (format[k + 1] == *form_list[k].sim)
 		{
 			r_val = form_list[m].f(arg_list);
 			if (r_val == -1)
@@ -28,7 +28,7 @@ int parser(const char *format, convert_t form_list[], va_list arg_list)
 			break;
 		}
 	}
-	if (form_list[m].type == 0 && format[k + 1] != ' ')
+	if (form_list[m].sim == 0 && format[k + 1] != ' ')
 	{
 		if (format[k + 1] != '\0')
 		{

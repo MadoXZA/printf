@@ -67,6 +67,7 @@ int print_d(va_list args)
 
 	count = 0;
 	n = va_arg(args, int);
+
 	if (n < 0)
 	{
 		black = (n * -1);

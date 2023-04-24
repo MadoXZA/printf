@@ -28,7 +28,7 @@ int parser(const char *format, convert_t form_list[], va_list arg_list)
 			break;
 		}
 	}
-	if (form_list[m].type == 0 && format[k + 1] != ' ')
+	if (form_list[m].sim == 0 && format[k + 1] != ' ')
 	{
 		if (format[k + 1] != '\0')
 		{

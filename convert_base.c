@@ -63,7 +63,7 @@ int print_octal(va_list list)
 		return (-1);
 	len = base_len(num, 8);
 
-	octal_rep = malloc(sizeof(char) * len + 1);
+	octal_rep = malloc(sizeof(char) * (len + 1));
 	if (octal_rep == NULL)
 		return (-1);
 
@@ -108,7 +108,7 @@ int print_hex_lower(va_list list)
 		return (-1);
 
 	len = base_len(num, 16);
-	hex_rep = malloc(sizeof(char) * len + 1);
+	hex_rep = malloc(sizeof(char) * (len + 1));
 
 	if (hex_rep == NULL)
 		return (-1);

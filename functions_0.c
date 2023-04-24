@@ -12,7 +12,7 @@ char *rev_string(char *src)
 	for (len = 0; src[len] != '\0'; len++)
 	{
 	}
-	res = malloc(sizeof(char) * len + 1);
+	res = malloc(sizeof(char) * (len + 1));
 	if (res == NULL)
 	return (NULL);
 	_memcpy(res, src, len);
@@ -65,5 +65,5 @@ void write_base(char *str)
 	int k;
 
 	for (k = 0; str[k] != '\0'; k++)
-		_putchar(str[k]);
+		putchar(str[k]);
 }

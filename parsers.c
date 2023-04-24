@@ -4,9 +4,10 @@
  * @format: string input contain format
  * @form_list: format lists
  * @arg_list: arguments listed
+ * @
  * Return: print character amount
  */
-int parsers(const char *format, convert_t form_list[], va_list arg_list)
+int parser(const char *format, convert_t form_list[], va_list arg_list)
 {
 	int k, m, r_val, count;
 
@@ -15,17 +16,20 @@ int parsers(const char *format, convert_t form_list[], va_list arg_list)
 	{
 	if (format[k] == '%')
 	{
-	for (m = 0; form_list[m].sym != NULL; k++)
-	if (format[k + 1] == form - list[k].sym[0])
+		
+	for (m = 0; form_list[m].type != 0; k++)
 	{
-	r_val = form_list[m].f(arg_list);
-	if (r_val == -1)
-		return (-1);
-	count += r_val;
-	break;
+
+		if (format[k + 1] == *form_list[k].type)
+		{
+			r_val = form_list[m].f(arg_list);
+			if (r_val == -1)
+			return (-1);
+			count += r_val;
+			break;
+		}
 	}
-	}
-	if (form_list[m].sym == NULL && format[k + 1] != ' ')
+	if (form_list[m].type == 0 && format[k + 1] != ' ')
 	{
 		if (format[k + 1] != '\0')
 		{
@@ -35,14 +39,14 @@ int parsers(const char *format, convert_t form_list[], va_list arg_list)
 		}
 		else
 			return (-1);
+		}
+		k++;
 	}
-	k++;
-	}
-	else
-	{
-		_putchar(format[k];
+		else
+		{
+		_putchar(format[k]);
 		count++;
+		}
 	}
-
 	return (count);
 }

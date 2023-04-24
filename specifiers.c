@@ -30,7 +30,7 @@ int print_string(va_list list)
 	}
 	for (k = 0; str[k] != '\0'; k++)
 	{
-		_putchar(str[k];
+		_putchar(str[k]);
 	}
 	return (k);
 	}
@@ -39,7 +39,7 @@ int print_string(va_list list)
  * @list: arguments listed
  * Return: amount of chracters printed
  */
-int print_percent(__atrribute__((unused))va_list list)
+int print_percent(__attribute__((unused))va_list list)
 {
 	_putchar('%');
 	return (1);
@@ -67,7 +67,7 @@ int print_integer(va_list list)
 		j *= 10;
 	while (j != 0)
 	{
-		len += _puthcar('0' + num / j);
+		len += _putchar('0' + num / j);
 		num %= j;
 		j /= 10;
 	}
@@ -95,8 +95,8 @@ int print_unsigned(va_list list)
 	}
 	num = va_arg(list, unsigned int);
 	if (n == 0)
-		return (len);
+	return (len);
 	if (n < 1)
-		return (-1);
-		return (len);
+	return (-1);
+	return (len);
 }

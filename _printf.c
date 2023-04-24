@@ -9,17 +9,16 @@
 int _printf(const char *format, ...)
 {
 	int count;
-	convert_t from_list[] = {
-		{"c", print_char};
-		{"s", print_string};
-		{"%", print_precentage};
-		{"d", print_integer};
-		{"i", print_integer};
-		{"b", print_binary};
-		{"u", print_unsigned};
-		{"o", print_octal};
-		{"x", print_hex_lower};
-		{"X", print_hex_upper};
+	convert_t format_list[] = {
+		{"c", print_char},
+		{"s", print_string},
+		{"%", print_percent},
+		{"d", print_integer},
+		{"b", print_binary},
+		{"u", print_unsigned},
+		{"o", print_octal},
+		{"x", print_hex_lower},
+		{"X", print_hex_upper},
 	};
 
 	va_list arg_list;
@@ -30,7 +29,7 @@ int _printf(const char *format, ...)
 	}
 
 	va_start(arg_list, format);
-	count = parser(format, form_list, arg_list);
+	count = parser(format, format_list, arg_list);
 	va_end(arg_list);
 
 	return (count);

@@ -7,16 +7,15 @@
 
 /**
  * struct convert - structure for functions and symbols to print
- * @opp: the operator
+ * @type: the type
  * @f: associated function
  */
 
-struct convert
+typedef struct convert
 {
-	char *opp;
+	char *type;
 	int (*f)(va_list);
-};
-typedef struct convert convert_t;
+} convert_t;
 
 /* printf handle function types*/
 
@@ -33,7 +32,7 @@ char *_memcpy(char *dest, char *src, unsigned int n);
 int print_char(va_list list);
 int print_string(va_list list);
 int print_percent(va_list list);
-int print_interger(va_list list);
+int print_integer(va_list list);
 int print_binary(va_list list);
 int print_unsigned(va_list list);
 int print_octal(va_list list);

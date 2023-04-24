@@ -12,7 +12,7 @@ int print_binary(va_list list)
 	int k, len;
 	char *str, *rev_str;
 
-	num = ba_arg(list, unsigned int);
+	num = va_arg(list, unsigned int);
 	if (num == 0)
 		return (_putchar('0'));
 	if (num < 1)
@@ -79,7 +79,7 @@ int print_octal(va_list list)
 	if (rev_str == NULL)
 		return (-1);
 
-	wtrie_base(rev_str);
+	write_base(rev_str);
 	free(octal_rep);
 	free(rev_str);
 	return (len);
@@ -129,7 +129,7 @@ int print_hex_lower(va_list list)
 	rev_hex = rev_string(hex_rep);
 	if (rev_hex == NULL)
 		return (-1);
-	wrtie_base(rev_hex);
+	write_base(rev_hex);
 	free(hex_rep);
 	free(rev_hex);
 	return (len);
@@ -169,7 +169,7 @@ int print_hex_upper(va_list list)
 			hex_rep[len] = rem_num;
 		}
 		else
-			hex[len] = rem_num + 48;
+			hex_rep[len] = rem_num + 48;
 		num = num / 16;
 	}
 	hex_rep = '\0';

@@ -7,7 +7,7 @@
 
 /**
  * struct convert - structure for functions and symbols to print
- * @type: the type
+ * @sim: the type
  * @f: associated function
  */
 

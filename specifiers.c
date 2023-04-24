@@ -5,7 +5,6 @@
  * @list: arguments listed
  * Return: amount of characters printed returned
  */
-
 int print_char(va_list list)
 {
 	_putchar(va_arg(list, int));
@@ -57,7 +56,7 @@ int print_integer(va_list list)
 
 	if (num < 0)
 	{
-		 _putchar('-');
+		_putchar('-');
 		len++;
 		if (num == -2147483648)
 		{

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 #include "main.h"
 
 /**
@@ -101,3 +102,5 @@ int print_i(va_list args)
 {
 	return (print_d(args));
 }
+=======
+>>>>>>> f5afe07b78ca91f190a33cbd805cf59b6b08e10e

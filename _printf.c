@@ -14,6 +14,7 @@ int _printf(const char *format, ...)
 		{"s", print_string},
 		{"%", print_percent},
 		{"d", print_integer},
+		{"i", print_integer},
 		{"b", print_binary},
 		{"u", print_unsigned},
 		{"o", print_octal},
